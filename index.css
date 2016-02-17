@@ -1,2 +1,6 @@
-/* CSS Document */
-
+.bgimage {
+	background-image: url(/img/reptiles.jpg);
+	background-position:center;
+	background-size: cover;
+	height:200px;
+}
