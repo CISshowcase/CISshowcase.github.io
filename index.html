@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="pageApp">
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,12 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+    
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+ 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="js/mainPage/app.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,39 +25,25 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-    	<div class="row">
-        	<div class="col-xs-1">
-            
-            </div>
-    	</div>
-    </div>
-    <!-- List App Container http://team.158ltd.com/2014/08/31/adding-and-removing-list-items-with-angularjs/ -->
-    <div class="container">
-    	<div class="row">
-        	<div class="col-xs-1">
-				<div ng-app="myApp">
-    <ul ng-controller="ItemsController" class="nav">
-        <input type="text" value="ItemName" ng-model="newItemName"
-        placeholder="name of new item...">
-            <button ng-click="addItem()">Add Me</button>
-        <li ng-repeat="item in items.data" id="item{{item.id}}">
-            <a href="#">{{item.title}}</a>  <a ng-click="deleteItem($index)" class="delete-item">x</a>
-        </li>
+    <!-- List App Container -->
+
+<div class="container" ng-controller="ShopCtrl">
+  <h1>My Shopping List</h1>
+  <div class="main">
+    <ul class="unstyled">
+      <li ng-repeat="item in items">
+        <input type="checkbox" id="item-{{item.id}}" ng-model="item.bought">
+        <label for="item-{{item.id}}" class="{{isBought(item.bought)}}">{{item.text}}<span></span></label>
+      </li>
     </ul>
+  </div>
 </div>
-            </div>
-    	</div>
-    </div>
-    
-    <div class="container">
-    	<div class="row">
-        	<div class="col-md-1">
-            	<h4>Hello, world!</h4>
-    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab libero, cupiditate veniam officiis itaque in porro iure fugit iusto reprehenderit commodi earum cum blanditiis quos error similique quod, facere! Hic.</p>
-            </div>
-    	</div>
-    </div>
+
+  <div class="footer">
+    <button class="btn btn-large btn-danger" ng-click="clearBought()">Remove Bought</button>
+  </div>
+</div>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -59,6 +51,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
-	<script src="todo.js"></script>
+	<script src=""></script>
   </body>
 </html>
