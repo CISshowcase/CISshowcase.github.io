@@ -1,47 +1,18 @@
-function ShopCtrl($scope) {
-    
-	$scope.items = [
-		{id: 1, text: 'Cheese - 200g', bought: false},
-		{id: 2, text: 'Bread', bought: true},
-		{id: 3, text: 'Onions x4', bought: false}
-	];
+app.controller('demoController', function($scope) {
+    // initial items
+    $scope.items = [
+    	'item one',
+    	'item two',
+    	'item three'
+    ];
 
-	$scope.clearBought = function() {
-		$scope.items = _.filter($scope.items, function(item) {
-			return !item.bought;
-		});
-	}
+    // add an item
+    $scope.add = function() {
+    	$scope.items.push($scope.input);
+    };
 
-	$scope.addItem = function() {
-		$scope.items.push({text: $scope.itemEntry, bought: false, id: ($scope.items.length + 1) });
-		$scope.itemEntry = '';
-	}
-
-	$scope.isBought = function(bought) {
-		return (bought) ? 'bought' : 'not-bought';
-	}
-}
-
-function ShopCtrl($scope) {
-    
-	$scope.items = [
-		{id: 1, text: 'Cheese - 200g', bought: false},
-		{id: 2, text: 'Bread', bought: true},
-		{id: 3, text: 'Onions x4', bought: false}
-	];
- 
-	$scope.clearBought = function() {
-		$scope.items = _.filter($scope.items, function(item) {
-			return !item.bought;
-		});
-	}
- 
-	$scope.addItem = function() {
-		$scope.items.push({text: $scope.itemEntry, bought: false, id: ($scope.items.length + 1) });
-		$scope.itemEntry = '';
-	}
- 
-	$scope.isBought = function(bought) {
-		return (bought) ? 'bought' : 'not-bought';
-	}
-}
+    // remove an item
+    $scope.remove = function(index) {
+    	$scope.items.splice(index, 1);
+    };
+});
