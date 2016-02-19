@@ -26,10 +26,10 @@
                 <li>
                   <span ng-hide="editing" ng-click="editing = true">{{gcery.name}} | ${{gcery.number}}</span>
                   <form ng-show="editing" ng-submit="editing = false">
-                    <label>Name:</label>
+                    <label>Item:</label>
                     <input type="text" ng-model="gcery.name" placeholder="Name" ng-required/>
-                    <label>Date:</label>
-                    <input type="text" ng-model="gcery.number" placeholder="Price" ng-required/>
+                    <label>Price:</label>
+                    <input type="text" ng-model="gcery.number" placeholder="Price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" ng-required/>
                     <br/>
                     <button class="btn" type="submit">Save</button>
                     <button class="btn" type="button" ng-click="remove(gcery)">Delete</button>
@@ -39,9 +39,9 @@
             </ul>
 
            <form ng-show="visible" ng-submit="newGrocery()">
-            <label>Name:</label>
+            <label>Item:</label>
             <input type="text" ng-model="gceryname" placeholder="Name" ng-required/>
-            <label>Date:</label>
+            <label>Price:</label>
             <input type="number" ng-model="gcerynumber" placeholder="Price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" ng-required/>
             <br/>
             <button class="btn" type="submit">Save</button>
