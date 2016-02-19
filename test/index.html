@@ -1,28 +1,56 @@
-<!doctype html>
-<html ng-app="todoApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="todo.js"></script>
-    <link rel="stylesheet" href="todo.css">
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Custom Plunker</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="app.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.0/css/bootstrap-combined.min.css"
+    rel="stylesheet">
   </head>
-  <body>
-    <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </label>
-        </li>
-      </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
+<body ng-app="birthdayToDo" ng-controller="main">
+    <div id="wrap">
+
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="page-header">
+          <h1>Birthday Reminders</h1>
+        </div>
+            <ul ng-repeat="bday in bdays">
+                <li>
+                  <span ng-hide="editing" ng-click="editing = true">{{bday.name}} | {{bday.date}}</span>
+                  <form ng-show="editing" ng-submit="editing = false">
+                    <label>Name:</label>
+                    <input type="text" ng-model="bday.name" placeholder="Name" ng-required/>
+                    <label>Date:</label>
+                    <input type="date" ng-model="bday.date" placeholder="Date" ng-required/>
+                    <br/>
+                    <button class="btn" type="submit">Save</button>
+                    <button class="btn" type="button" ng-click="remove(bday)">Delete</button>
+                  </form>
+                </li>
+                
+            </ul>
+
+           <form ng-show="visible" ng-submit="newBirthday()">
+            <label>Name:</label>
+            <input type="text" ng-model="bdayname" placeholder="Name" ng-required/>
+            <label>Date:</label>
+            <input type="date" ng-model="bdaydate" placeholder="Date" ng-required/>
+            <br/>
+            <button class="btn" type="submit">Save</button>
+          </form>
+      </div>
+
+      <div id="push"></div>
     </div>
-  </body>
-</html>
+
+    <div id="footer">
+      <div class="container">
+        <a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
+      </div>
+    </div>
+    </body>
