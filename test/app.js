@@ -14,7 +14,7 @@ app.controller('main', function($scope){
 
     $scope.newGrocery = function(){
 
-        $scope.gcerys.push({name:$scope.gceryname});/*, date:$scope.bdaydate*/
+        $scope.gcerys.push({name:$scope.gceryname});/*, date:$scope.gcerydate*/
 
         $scope.gceryname = '';
         //$scope.gcerydate = '';
