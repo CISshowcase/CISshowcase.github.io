@@ -1,4 +1,4 @@
-.done-true {
-  text-decoration: line-through;
-  color: grey;
+#helptxt {
+  color:grey;
+  font-size: 5px;
 }
