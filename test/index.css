@@ -144,7 +144,6 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   display: block;
   margin: 0;
   width: 30%; height: 2em;
-  line-height: 40px; font-size: 17px;
   border: 1px solid #bbb;
 }
 /*button[type=submit] {
