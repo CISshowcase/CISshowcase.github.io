@@ -23,7 +23,7 @@
                 <li>
                   <span ng-hide="editing" ng-click="editing = true">{{gcery.name}} | {{gcery.date}}</span>
                   <form ng-show="editing" ng-submit="editing = false">
-                    <label>Name:</label>
+                    <label>Name of item:</label>
                     <input type="text" ng-model="gcery.name" placeholder="Name" ng-required/>
                     <!-- <label>Date:</label> -->
                     <!-- <input type="date" ng-model="gcery.date" placeholder="Date" ng-required/> -->
@@ -35,8 +35,8 @@
                 
             </ul>
 
-           <form ng-show="visible" ng-submit="newBirthday()">
-            <label>Name:</label>
+           <form ng-show="visible" ng-submit="newGrocery()">
+            <label>Name of Item:</label>
             <input type="text" ng-model="gceryname" placeholder="Name" ng-required/>
             <!-- <label>Date:</label>
             <input type="date" ng-model="gcerydate" placeholder="Date" ng-required/> -->
