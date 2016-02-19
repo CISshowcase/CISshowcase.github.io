@@ -1,4 +1,4 @@
-var app = angular.module('birthdayToDo', []);
+var app = angular.module('groceryToDo', []);
 
 app.controller('main', function($scope){ 
 
@@ -6,24 +6,24 @@ app.controller('main', function($scope){
 
         $scope.visible = false;
 
-    // Create the array to hold the list of Birthdays
+    // Create the array to hold the list of Grocerys
 
-        $scope.bdays = [];
+        $scope.gcerys = [];
 
-    // Create the function to push the data into the "bdays" array
+    // Create the function to push the data into the "gcery" array
 
-    $scope.newBirthday = function(){
+    $scope.newGrocery = function(){
 
-        $scope.bdays.push({name:$scope.bdayname, date:$scope.bdaydate});
+        $scope.gcerys.push({name:$scope.gceryname/*, date:$scope.bdaydate*/});
 
-        $scope.bdayname = '';
-        $scope.bdaydate = '';
+        $scope.gceryname = '';
+        //$scope.gcerydate = '';
 
     };
     
     
     $scope.remove=function(item){ 
-      var index=$scope.bdays.indexOf(item)
-      $scope.bdays.splice(index,1);     
+      var index=$scope.gcerys.indexOf(item)
+      $scope.gcerys.splice(index,1);     
     }
 });

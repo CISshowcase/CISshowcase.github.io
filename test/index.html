@@ -11,22 +11,22 @@
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.0/css/bootstrap-combined.min.css"
     rel="stylesheet">
   </head>
-<body ng-app="birthdayToDo" ng-controller="main">
+<body ng-app="groceryToDo" ng-controller="main">
     <div id="wrap">
 
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1>Birthday Reminders</h1>
+          <h1>Grocery List</h1>
         </div>
-            <ul ng-repeat="bday in bdays">
+            <ul ng-repeat="gcery in gcerys">
                 <li>
-                  <span ng-hide="editing" ng-click="editing = true">{{bday.name}} | {{bday.date}}</span>
+                  <span ng-hide="editing" ng-click="editing = true">{{gcery.name}} | {{gcery.date}}</span>
                   <form ng-show="editing" ng-submit="editing = false">
                     <label>Name:</label>
-                    <input type="text" ng-model="bday.name" placeholder="Name" ng-required/>
-                    <label>Date:</label>
-                    <input type="date" ng-model="bday.date" placeholder="Date" ng-required/>
+                    <input type="text" ng-model="gcery.name" placeholder="Name" ng-required/>
+                    <!-- <label>Date:</label> -->
+                    <!-- <input type="date" ng-model="gcery.date" placeholder="Date" ng-required/> -->
                     <br/>
                     <button class="btn" type="submit">Save</button>
                     <button class="btn" type="button" ng-click="remove(bday)">Delete</button>
