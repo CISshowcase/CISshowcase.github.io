@@ -3,3 +3,7 @@
   font-size: 12px;
   
 }
+.page-header {
+  background-color: #b3ffcc;
+  border-bottom: none;
+}
