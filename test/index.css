@@ -12,7 +12,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   -webkit-appearance: none; -moz-appearance: none;
   display: block;
   margin: 0;
-  width: 95%; height: 40px;
+  width: 95%; height: 2em;
   line-height: 40px; font-size: 17px;
   border: 1px solid #bbb;
 }
