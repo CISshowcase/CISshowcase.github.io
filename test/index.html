@@ -21,12 +21,12 @@
         </div>
             <ul ng-repeat="gcery in gcerys">
                 <li>
-                  <span ng-hide="editing" ng-click="editing = true">{{gcery.name}} | {{gcery.date}}</span>
+                  <span ng-hide="editing" ng-click="editing = true">{{gcery.name}} | ${{gcery.number}}</span>
                   <form ng-show="editing" ng-submit="editing = false">
                     <label>Name:</label>
                     <input type="text" ng-model="gcery.name" placeholder="Name" ng-required/>
-                    <!-- <label>Date:</label> -->
-                    <!-- <input type="date" ng-model="gcery.date" placeholder="Date" ng-required/> -->
+                    <label>Date:</label>
+                    <input type="number" ng-model="gcery.number" placeholder="Price" ng-required/>
                     <br/>
                     <button class="btn" type="submit">Save</button>
                     <button class="btn" type="button" ng-click="remove(gcery)">Delete</button>
@@ -38,8 +38,8 @@
            <form ng-show="visible" ng-submit="newGrocery()">
             <label>Name:</label>
             <input type="text" ng-model="gceryname" placeholder="Name" ng-required/>
-            <!-- <label>Date:</label>
-            <input type="date" ng-model="gcerydate" placeholder="Date" ng-required/> -->
+            <label>Date:</label>
+            <input type="number" ng-model="gcerynumber" placeholder="Price" ng-required/>
             <br/>
             <button class="btn" type="submit">Save</button>
           </form>
