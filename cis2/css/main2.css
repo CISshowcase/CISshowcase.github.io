@@ -199,16 +199,10 @@ Preloader Style
 Navigation Style
 ========================================================================== */
 .navbar-default {
-  background: rgba(13, 13, 13, 0.6);
-  margin-bottom: 0;
-  border: none;
-}
-.navbar-default2 {
   background: rgba(36, 36, 42, 1);
   margin-bottom: 0;
   border: none;
 }
-
 .navbar-default .navbar-header {
   width: 28%;
   padding-right: 15px;
@@ -248,7 +242,7 @@ Navigation Style
 }
 
 .top-nav-collapse {
-  background: #24242a;
+  background: ;
 }
 .top-nav-collapse .navbar-brand {
   height: auto;
@@ -387,8 +381,13 @@ Services Style
   text-transform: uppercase;
   color: #fff;
 }
+#services h3 {
+  text-transform: uppercase;
+  color: #fff;
+}
 #services p {
   color: #fff;
+  font-size: 1.2em;
 }
 #services .services-box {
   margin-top: 40px;
